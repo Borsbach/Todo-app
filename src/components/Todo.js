@@ -15,11 +15,12 @@ class Todo extends Component {
     this.setState({ inputText: e.target.value })
   }
 
-  submitTodo = () => {
+  submitTodo = (e) => {
+    e.preventDefault()
     const currentTodos = this.state.todos
     currentTodos.push(this.state.inputText)
     console.log(currentTodos)
-    this.setState({ todos: currentTodos })
+    this.setState({ todos: currentTodos, inputText: '' })
   }
 
   render () {
@@ -28,11 +29,13 @@ class Todo extends Component {
         <h1>Count:</h1>
         <h3>{this.state.count}</h3>
         <button onClick={this.increase}>Increase Counter</button>
-        <input 
+          <form onSubmit={this.submitTodo}>
+          <input 
           type='text' 
           onChange={this.handleTextChange}
           value={this.state.inputText}/>
-        <button onClick={this.submitTodo}>Add Todo</button>
+            <button type="submit">Add Todo</button>
+          </form>
         {
           this.state.todos.map((todo, index) => {
             return (
