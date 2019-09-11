@@ -7,6 +7,7 @@ class DisplayList extends Component {
         return <li key={todos}>{ todos } <button href='#' onClick={ this.props.handleDelete.bind(null, todos) }>Delete</button></li>        
       })}
     </ul>
+    
   }
 }
 

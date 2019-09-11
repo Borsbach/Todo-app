@@ -46,26 +46,19 @@ class Todo extends Component {
 
   render () {
     return (
-      <div>
+      <div className="Counter">
         <h1>Counter:</h1>
-        <h2>{this.state.count}</h2>
+        <h3>{this.state.count}</h3>
         <button onClick={this.increase}>Increase Counter</button>
         <button onClick={this.resetCount}>Reset Counter</button>
-        <button onClick={this.toggle}>{this.state.isClicked ? "Counter: ON" : "Counter: OFF"}</button>
-          <form onSubmit={this.submitTodo}>
-            <input type='text' onChange={this.handleTextChange} value={this.state.inputText}/>
-            <button type="submit">Add Todo</button>
-          </form>
-          <DisplayList handleDelete={this.handleDelete.bind(this)} todos={ this.state.todos} />
-        {/* {
-          this.state.todos.map((todo, index) => {
-            return (
-              <p key={index}>{todo}</p>
-            )
-          })
-        } */}
+        <button onClick={this.toggle}>{this.state.isClicked ? "Counter: ON" : "Counter: OFF"}</button> 
+        <form onSubmit={this.submitTodo}>
+          <input type='text' onChange={this.handleTextChange} value={this.state.inputText}/>
+          <button type="submit">Add Todo</button>
+        </form>
+        <h2><DisplayList handleDelete={this.handleDelete.bind(this)} todos={ this.state.todos} /></h2>
       </div>
-    )
+    );
   }
 }
 
