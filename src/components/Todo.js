@@ -36,6 +36,14 @@ class Todo extends Component {
     this.setState({ inputText: event.target.value })
   }
 
+  handleComplete = () => {
+    if (this.state.isClicked == false) {
+      this.setState({ isClicked: true })
+    } else 
+    {this.setState({ isClicked: false})
+  }
+}
+
   submitTodo = (event) => {
     event.preventDefault()
     const currentTodos = this.state.todos
@@ -56,7 +64,7 @@ class Todo extends Component {
           <input type='text' onChange={this.handleTextChange} value={this.state.inputText}/>
           <button type="submit">Add Todo</button>
         </form>
-        <h2><DisplayList handleDelete={this.handleDelete.bind(this)} todos={ this.state.todos} /></h2>
+        <h2><DisplayList handleDelete={this.handleDelete.bind(this)} todos={ this.state.todos} handleComplete={ this.handleComplete } isClicked={this.state.isClicked} /></h2>
       </div>
     );
   }
