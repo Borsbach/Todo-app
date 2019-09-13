@@ -10,7 +10,7 @@ class DisplayList extends Component {
     }
 
     return (
-      <ul>
+      <ul className='items-returned'>
         {this.props.todos.map((todos, index) => {
           return (
             <li style={listStyle} key={todos}>

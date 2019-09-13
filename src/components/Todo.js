@@ -59,12 +59,19 @@ class Todo extends Component {
         <h3>{this.state.count}</h3>
         <button onClick={this.increase}>Increase Counter</button>
         <button onClick={this.resetCount}>Reset Counter</button>
-        <button onClick={this.toggle}>{this.state.isClicked ? "Counter: ON" : "Counter: OFF"}</button> 
+        <button onClick={this.toggle}>{this.state.isClicked ? "Completes: Yes" : "Completed: No"}</button> 
+        <div>
+          <p>Please add a Todo...</p>
+        </div>
         <form onSubmit={this.submitTodo}>
           <input type='text' onChange={this.handleTextChange} value={this.state.inputText}/>
-          <button type="submit">Add Todo</button>
+          <button type="submit">Submit Todo</button>
         </form>
+        <div>
+          <p>My list of Todo's:</p>
+        </div>
         <h2><DisplayList handleDelete={this.handleDelete.bind(this)} todos={ this.state.todos} handleComplete={ this.handleComplete } isClicked={this.state.isClicked} /></h2>
+        
       </div>
     );
   }
