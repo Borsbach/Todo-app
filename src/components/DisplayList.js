@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class DisplayList extends Component {
   render() {
     let listStyle = {};
-    if (this.props.isClicked == true) {
+    if (this.props.isClicked === true) {
       listStyle = { textDecoration: "line-through" };
     } else {
       listStyle = { textDecoration: "none" };

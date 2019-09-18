@@ -15,7 +15,7 @@ class Todo extends Component {
   handleDelete (itemToBeDeleted) {
     console.log(itemToBeDeleted);
     const newTodos = this.state.todos.filter((_item) => {
-      return _item !=itemToBeDeleted
+      return _item !==itemToBeDeleted
     });
     this.setState({ todos: newTodos });
   }
@@ -29,15 +29,15 @@ class Todo extends Component {
   }
 
   resetCount = () => {
-    this.setState({ count: this.state.count = 0})
+    this.setState({ count: this.state.count === 0})
   }
 
   handleTextChange = (event) => {
-    this.setState({ inputText: event.target.value })
+    this.setState({ inputText: event.target.value.toUpperCase() })
   }
 
   handleComplete = () => {
-    if (this.state.isClicked == false) {
+    if (this.state.isClicked === false) {
       this.setState({ isClicked: true })
     } else 
     {this.setState({ isClicked: false})
